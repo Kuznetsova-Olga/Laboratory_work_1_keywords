@@ -156,7 +156,7 @@ def get_top_n(frequencies: dict[str, int | float], top: int) -> list[str] | None
     """
     if ((not check_dict(frequencies, str, int, False) and
          not check_dict(frequencies, str, float, False)) or
-            not check_positive_int(top)):
+         not check_positive_int(top)):
         return None
     changed_dict = dict(sorted(frequencies.items(), key=lambda item: item[1], reverse=True))
     result = list(changed_dict.keys())[:top]
@@ -218,14 +218,14 @@ def calculate_expected_frequency(
     """
     if not check_dict(doc_freqs, str, int, False) or not check_dict(corpus_freqs, str, int, True):
         return None
-    expected = {}
+    expected_frequency = {}
     for key, value in doc_freqs.items():
-        k = corpus_freqs.get(key, 0)  # t in D
-        words_without_t_d = sum(doc_freqs.values()) - value
-        words_without_t = sum(corpus_freqs.values()) - k
-        expected[key] = (((value + k) * (value + words_without_t_d)) /
-                         (value + k + words_without_t_d + words_without_t))
-    return expected
+        count_key_in_d = corpus_freqs.get(key, 0)
+        words_without_t_in_d = sum(doc_freqs.values()) - value
+        words_without_t = sum(corpus_freqs.values()) - count_key_in_d
+        expected_frequency[key] = (((value + count_key_in_d) * (value + words_without_t_in_d)) /
+                         (value + count_key_in_d + words_without_t_in_d + words_without_t))
+    return expected_frequency
 
 
 def calculate_chi_values(
@@ -245,8 +245,8 @@ def calculate_chi_values(
     if not check_dict(expected, str, float, False) or not check_dict(observed, str, int, False):
         return None
     chi_values = {}
-    for k in expected.keys():
-        chi_values[k] = ((observed[k] - expected[k]) ** 2) / (expected[k])
+    for key in expected.keys():
+        chi_values[key] = ((observed[key] - expected[key]) ** 2) / (expected[key])
     return chi_values
 
 
@@ -270,7 +270,7 @@ def extract_significant_words(
     result_dict = {}
     if alpha not in criterion:
         return None
-    for k, v in chi_values.items():
-        if v > criterion[alpha]:
-            result_dict[k] = v
+    for key, value in chi_values.items():
+        if value > criterion[alpha]:
+            result_dict[key] = value
     return result_dict
