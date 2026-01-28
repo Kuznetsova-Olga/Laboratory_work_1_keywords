@@ -14,5 +14,5 @@ Keyword extraction is an automated process of identifying the most important wor
 Laboratory work #1 includes two approaches to keyword extraction:  
 1) The frequency-based method.  
 2) The TF-IDF-based method.  
-TF-IDF (Term Frequency-Inverse Document Frequency): a statistical method that evaluates the importance of a word in a document compared to a collection of documents. Words with high TF-IDF occur frequently in a given document but rarely in others, making them potentially key.
+TF-IDF (Term Frequency-Inverse Document Frequency): a statistical method that evaluates the importance of a word in a document compared to a collection of documents. Words with high TF-IDF occur frequently in a given document but rarely in others, making them strong candidates for keywords.
 
