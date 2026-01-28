@@ -222,9 +222,9 @@ def calculate_expected_frequency(
     for key, value in doc_freqs.items():
         count_key_in_d = corpus_freqs.get(key, 0)
         words_without_t_in_d = sum(doc_freqs.values()) - value
-        words_without_t = sum(corpus_freqs.values()) - count_key_in_d
+        words_without = sum(corpus_freqs.values()) - count_key_in_d
         expected_frequency[key] = (((value + count_key_in_d) * (value + words_without_t_in_d)) /
-                         (value + count_key_in_d + words_without_t_in_d + words_without_t))
+                         (value + count_key_in_d + words_without_t_in_d + words_without))
     return expected_frequency
 
 
