@@ -10,7 +10,7 @@ This repository contains only two files with the main code for the project. The 
 5.Run the program to verify that it works correctly and to see the results.  
   
 **Laboratory work description**  
-Keyword extraction is an automated process of identifying the most important words or phrases that best describe the topic or main idea of a text. This process is an important step in information retrieval, text annotation, automatic referencing, and search engine development.  
+Keyword extraction is an automated process of identifying the most important words or phrases that best describe the topic or main idea of a text. This process is an important step in information retrieval, text annotation, automatic text summarization, and search engine development.  
 Laboratory work #1 includes two approaches to keyword extraction:  
 1) The frequency-based method.  
 2) The TF-IDF-based method.  
