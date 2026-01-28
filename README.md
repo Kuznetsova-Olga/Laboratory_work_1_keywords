@@ -13,6 +13,6 @@ This repository contains only two files with the main code for the project. The 
 Keyword extraction is an automated process of identifying the most important words or phrases that best describe the topic or main idea of a text. This process is an important step in information retrieval, text annotation, automatic referencing, and search engine development.  
 Laboratory work #1 includes two approaches to keyword extraction:  
 1) The frequency-based method.  
-2)  The TF-IDF-based method.  
+2) The TF-IDF-based method.  
 TF-IDF (Term Frequency-Inverse Document Frequency): a statistical method that evaluates the importance of a word in a document compared to a collection of documents. Words with high TF-IDF occur frequently in a given document but rarely in others, making them potentially key.
 
